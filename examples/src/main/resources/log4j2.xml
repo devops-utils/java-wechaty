@@ -13,5 +13,9 @@
         <Logger name="io.github.wechaty" level="DEBUG" >
             <AppenderRef ref="Console"/>
         </Logger>
+        <Logger name="io.grpc.netty.shaded.io.netty" level="all"/>
+        <!--<Root level="off">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>-->
     </Loggers>
 </Configuration>

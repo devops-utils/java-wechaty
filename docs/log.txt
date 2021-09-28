@@ -2,3 +2,84 @@ SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+
+
+java.lang.UnsatisfiedLinkError: no io_grpc_netty_shaded_netty_transport_native_epoll_x86_64 in java.library.path
+        at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+        at java.lang.Runtime.loadLibrary0(Runtime.java:871)
+        at java.lang.System.loadLibrary(System.java:1124)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:371)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:363)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:341)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:136)
+        at io.grpc.netty.shaded.io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:231)
+        at io.grpc.netty.shaded.io.netty.channel.epoll.Native.<clinit>(Native.java:58)
+        at io.grpc.netty.shaded.io.netty.channel.epoll.Epoll.<clinit>(Epoll.java:39)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:264)
+        at io.grpc.netty.shaded.io.grpc.netty.Utils.isEpollAvailable(Utils.java:273)
+        at io.grpc.netty.shaded.io.grpc.netty.Utils.<clinit>(Utils.java:107)
+        at io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder.<clinit>(NettyChannelBuilder.java:74)
+        at io.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider.builderForAddress(NettyChannelProvider.java:37)
+        at io.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider.builderForAddress(NettyChannelProvider.java:23)
+        at io.grpc.ManagedChannelBuilder.forAddress(ManagedChannelBuilder.java:39)
+        at io.github.wechaty.grpc.GrpcPuppet.startGrpcClient(GrpcPuppet.kt:161)
+        at io.github.wechaty.grpc.GrpcPuppet.start(GrpcPuppet.kt:77)
+        at io.github.wechaty.Wechaty.start(Wechaty.kt:55)
+        at io.github.wechaty.example.Main.main(Main.java:46)
+
+
+java.lang.UnsatisfiedLinkError: no io_grpc_netty_shaded_netty_transport_native_epoll_x86_64 in java.library.path
+        at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+        at java.lang.Runtime.loadLibrary0(Runtime.java:871)
+        at java.lang.System.loadLibrary(System.java:1124)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:351)
+        at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:136)
+        at io.grpc.netty.shaded.io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:231)
+        at io.grpc.netty.shaded.io.netty.channel.epoll.Native.<clinit>(Native.java:58)
+        at io.grpc.netty.shaded.io.netty.channel.epoll.Epoll.<clinit>(Epoll.java:39)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:264)
+        at io.grpc.netty.shaded.io.grpc.netty.Utils.isEpollAvailable(Utils.java:273)
+        at io.grpc.netty.shaded.io.grpc.netty.Utils.<clinit>(Utils.java:107)
+        at io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder.<clinit>(NettyChannelBuilder.java:74)
+        at io.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider.builderForAddress(NettyChannelProvider.java:37)
+        at io.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider.builderForAddress(NettyChannelProvider.java:23)
+        at io.grpc.ManagedChannelBuilder.forAddress(ManagedChannelBuilder.java:39)
+        at io.github.wechaty.grpc.GrpcPuppet.startGrpcClient(GrpcPuppet.kt:161)
+        at io.github.wechaty.grpc.GrpcPuppet.start(GrpcPuppet.kt:77)
+        at io.github.wechaty.Wechaty.start(Wechaty.kt:55)
+        at io.github.wechaty.example.Main.main(Main.java:46)
+        Suppressed: java.lang.UnsatisfiedLinkError: no io_grpc_netty_shaded_netty_transport_native_epoll_x86_64 in java.library.path
+                at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)
+                at java.lang.Runtime.loadLibrary0(Runtime.java:871)
+                at java.lang.System.loadLibrary(System.java:1124)
+                at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:371)
+                at java.security.AccessController.doPrivileged(Native Method)
+                at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:363)
+                at io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:341)
+                ... 16 common frames omitted
+18:13:00.119 [main] DEBUG io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryLoader - Successfully loaded the library /tmp/libio_grpc_netty_shaded_netty_transport_native_epoll_x86_647931206671340516506.so
+
+
+18:13:00.899 [main] ERROR io.github.wechaty.grpc.GrpcPuppet - start() rejection:
+io.grpc.StatusRuntimeException: UNAVAILABLE: Network closed for unknown reason
+        at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:244)
+        at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:225)
+        at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:142)
+        at io.github.wechaty.grpc.PuppetGrpc$PuppetBlockingStub.start(PuppetGrpc.java:2744)
+        at io.github.wechaty.grpc.GrpcPuppet.start(GrpcPuppet.kt:81)
+        at io.github.wechaty.Wechaty.start(Wechaty.kt:55)
+        at io.github.wechaty.example.Main.main(Main.java:46)

@@ -49,4 +49,5 @@
         <appender-ref ref="error" />
     </root>
     <logger name="io.github.wechaty" level="DEBUG" />
+    <logger name="io.grpc.netty.shaded.io.netty" level="DEBUG" />
 </configuration>
