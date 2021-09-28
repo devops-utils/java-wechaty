@@ -35,7 +35,7 @@ public class Main {
                         room.say("dong");
                     }
                 }
-            }).start(true);
+            }).start(false);
 
 //    }
 
