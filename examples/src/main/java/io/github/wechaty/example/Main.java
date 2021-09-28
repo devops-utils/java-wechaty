@@ -15,6 +15,8 @@ public class Main {
 
     public static void main(String[] args){
 
+        System.out.println("start");
+
         Wechaty bot = Wechaty.instance("a5134f66-d585-4fd1-8974-26e1d3302c55")
             .onScan((qrcode, statusScanStatus, data) -> System.out.println(QrcodeUtils.getQr(qrcode)))
             .onLogin(user -> System.out.println(user))
