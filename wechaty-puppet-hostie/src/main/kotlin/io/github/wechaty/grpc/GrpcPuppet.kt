@@ -61,6 +61,8 @@ class GrpcPuppet(puppetOptions: PuppetOptions) : Puppet(puppetOptions) {
 
     override fun start(): Future<Void> {
 
+        log.info("startGrpcClient start")
+
         val future = CompletableFuture<Void>()
 
         if (state == StateEnum.ON) {
