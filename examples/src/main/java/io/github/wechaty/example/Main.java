@@ -2,6 +2,8 @@ package io.github.wechaty.example;
 
 
 import io.github.wechaty.Wechaty;
+import io.github.wechaty.WechatyOptions;
+import io.github.wechaty.schemas.PuppetOptions;
 import io.github.wechaty.user.Room;
 import io.github.wechaty.utils.QrcodeUtils;
 import okhttp3.OkHttpClient;
@@ -17,7 +19,12 @@ public class Main {
 
         System.out.println("start");
 
-        Wechaty bot = Wechaty.instance("a5134f66-d585-4fd1-8974-26e1d3302c55")
+        PuppetOptions puppetOptions = new PuppetOptions();
+        puppetOptions.setEndPoint("localhost:8788");
+        puppetOptions.setToken("a5134f66-d585-4fd1-8974-26e1d3302c55");
+        WechatyOptions wechatyOptions = new WechatyOptions();
+        wechatyOptions.setPuppetOptions(puppetOptions);
+        Wechaty bot = Wechaty.instance(wechatyOptions)
             .onScan((qrcode, statusScanStatus, data) -> System.out.println(QrcodeUtils.getQr(qrcode)))
             .onLogin(user -> System.out.println(user))
             .onMessage(message -> {
