@@ -152,6 +152,7 @@ class GrpcPuppet(puppetOptions: PuppetOptions) : Puppet(puppetOptions) {
             }
 
         }
+        log.debug("ttttttttttttttttttttttttttttttttttttt")
         log.debug("host:${discoverHostieIp.first} port:${discoverHostieIp.second}")
 
         if (StringUtils.isEmpty(discoverHostieIp.first) || StringUtils.equals(discoverHostieIp.first, "0.0.0.0")) {
