@@ -95,3 +95,4 @@ io.grpc.StatusRuntimeException: UNAUTHENTICATED: Invalid Wechaty TOKEN "localhos
         at io.github.wechaty.Wechaty.start(Wechaty.kt:55)
         at io.github.wechaty.example.Main.main(Main.java:46)
 
+https://grpc.io/docs/guides/auth/#with-server-authentication-ssltls-and-a-custom-header-with-token
