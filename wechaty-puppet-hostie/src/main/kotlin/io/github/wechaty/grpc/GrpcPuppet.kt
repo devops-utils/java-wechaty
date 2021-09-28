@@ -62,6 +62,7 @@ class GrpcPuppet(puppetOptions: PuppetOptions) : Puppet(puppetOptions) {
     override fun start(): Future<Void> {
 
         log.info("startGrpcClient start")
+        System.out.println("startGrpcClient start")
 
         val future = CompletableFuture<Void>()
 
