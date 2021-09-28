@@ -8,16 +8,22 @@ import io.github.wechaty.user.Room;
 import io.github.wechaty.utils.QrcodeUtils;
 import okhttp3.OkHttpClient;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 
 public class Main {
+    private final static Log logger = LogFactory.getLog(Main.class);
 
     public static void main(String[] args){
 
         System.out.println("start");
+        logger.info("start");
 
         PuppetOptions puppetOptions = new PuppetOptions();
         puppetOptions.setEndPoint("localhost:8788");
