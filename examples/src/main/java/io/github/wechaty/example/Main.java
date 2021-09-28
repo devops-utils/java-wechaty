@@ -18,11 +18,13 @@ import java.util.concurrent.ExecutionException;
 
 
 public class Main {
-    private final static Log logger = LogFactory.getLog(Main.class);
+    private final static Log log = LogFactory.getLog(Main.class);
+    private final static org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args){
 
         System.out.println("start");
+        log.info("start");
         logger.info("start");
 
         PuppetOptions puppetOptions = new PuppetOptions();
