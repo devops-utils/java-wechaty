@@ -49,6 +49,7 @@ class Wechaty private constructor(private var wechatyOptions: WechatyOptions) : 
     fun start(await: Boolean = false):Wechaty {
 
         log.info("Wechaty start")
+        System.out.println("Wechaty start")
 
         initPuppet()
         puppet.start().get()
