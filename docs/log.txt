@@ -83,3 +83,15 @@ io.grpc.StatusRuntimeException: UNAVAILABLE: Network closed for unknown reason
         at io.github.wechaty.grpc.GrpcPuppet.start(GrpcPuppet.kt:81)
         at io.github.wechaty.Wechaty.start(Wechaty.kt:55)
         at io.github.wechaty.example.Main.main(Main.java:46)
+
+19:02:51.677 [grpc-default-worker-ELG-1-2] DEBUG io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler - [id: 0x7c9ec3b2, L:/127.0.0.1:57926 - R:localhost/127.0.0.1:8788] INBOUND HEADERS: streamId=3 headers=GrpcHttp2ResponseHeaders[grpc-status: 16, grpc-message: Invalid%20Wechaty%20TOKEN%20%22localhost:8788%22, user-agent: grpc-java-netty/1.29.0, authorization: Wechaty localhost:8788] padding=0 endStream=true
+19:02:51.682 [main] ERROR io.github.wechaty.grpc.GrpcPuppet - start() rejection:
+io.grpc.StatusRuntimeException: UNAUTHENTICATED: Invalid Wechaty TOKEN "localhost:8788"
+        at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:244)
+        at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:225)
+        at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:142)
+        at io.github.wechaty.grpc.PuppetGrpc$PuppetBlockingStub.start(PuppetGrpc.java:2744)
+        at io.github.wechaty.grpc.GrpcPuppet.start(GrpcPuppet.kt:81)
+        at io.github.wechaty.Wechaty.start(Wechaty.kt:55)
+        at io.github.wechaty.example.Main.main(Main.java:46)
+
