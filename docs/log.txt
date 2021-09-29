@@ -98,3 +98,10 @@ io.grpc.StatusRuntimeException: UNAUTHENTICATED: Invalid Wechaty TOKEN "localhos
 https://grpc.io/docs/guides/auth/#with-server-authentication-ssltls-and-a-custom-header-with-token
 
 https://github.com/wechaty/grpc/blob/218ef0dc8956f7c7a5113298a9658f26dee14468/examples/auth/server.ts
+
+(node:38) UnhandledPromiseRejectionWarning: Error: Wechaty Puppet Unsupported API Error. Learn More At https://github.com/wechaty/wechaty-puppet/wiki/Compatibility
+    at Object.throwUnsupportedError (/bot/node_modules/_wechaty-puppet@0.41.9@wechaty-puppet/dist/src/throw-unsupported-error.js:6:11)
+    at PuppetWeChat.messageSendUrl (/bot/node_modules/_wechaty-puppet-wechat@0.28.4@wechaty-puppet-wechat/dist/src/puppet-wechat.js:309:26)
+    at WechatifiedMessage.say (/bot/node_modules/_wechaty@0.63.9@wechaty/dist/src/user/message.js:446:47)
+    at sendMsg (/bot/command-utils.js:151:21)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
