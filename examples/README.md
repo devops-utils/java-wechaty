@@ -25,4 +25,6 @@ https://blog.csdn.net/hilaryfrank/article/details/110490618
 https://github.com/wechaty/wechaty-puppet-wechat/blob/a82066e952aae4a93c18504fafbcd2e9e1139181/src/puppet-wechat.ts#L473-L478
 
 protoc-gen-grpc-java
+
+https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.1/protoc-gen-grpc-java-1.37.1-linux-x86_64.exe
 ```
