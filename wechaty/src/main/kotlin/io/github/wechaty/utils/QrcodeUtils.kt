@@ -18,13 +18,14 @@ class QrcodeUtils {
         @JvmStatic
         fun getQr(text: String): String {
             var s: String = "生成二维码失败"
-            val width = 40
-            val height = 40
+            val width = 30
+            val height = 30
             // 用于设置QR二维码参数
             val qrParam: Hashtable<EncodeHintType, Any> = Hashtable<EncodeHintType, Any>()
             // 设置QR二维码的纠错级别——这里选择最低L级别
             qrParam[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
             qrParam[EncodeHintType.CHARACTER_SET] = "utf-8"
+            System.out.println(text)
             try {
                 val bitMatrix: BitMatrix = MultiFormatWriter().encode(text, BarcodeFormat.QR_CODE, width, height, qrParam)
                 s = toAscii(bitMatrix)
