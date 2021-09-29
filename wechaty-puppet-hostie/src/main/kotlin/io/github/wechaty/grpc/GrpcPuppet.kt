@@ -8,6 +8,8 @@ import io.github.wechaty.grpc.puppet.*
 import io.github.wechaty.io.github.wechaty.schemas.EventEnum
 import io.github.wechaty.schemas.*
 import io.github.wechaty.utils.JsonUtils
+import io.grpc.Channel
+import io.grpc.ClientInterceptors
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder
 import io.grpc.stub.StreamObserver
@@ -162,8 +164,14 @@ class GrpcPuppet(puppetOptions: PuppetOptions) : Puppet(puppetOptions) {
         val newFixedThreadPool = newFixedThreadPool(16)
         channel = ManagedChannelBuilder.forAddress(discoverHostieIp.first, NumberUtils.toInt(discoverHostieIp.second)).usePlaintext().executor(newFixedThreadPool).build()
 
+        // var channel1: Channel = ClientInterceptors.intercept(channel, UserAuthClientInterceptor())
+
+        val token = BearerToken(puppetOptions?.token)
+
         grpcClient = PuppetGrpc.newBlockingStub(channel)
+            .withCallCredentials(token)
         grpcAsyncClient = PuppetGrpc.newStub(channel)
+            .withCallCredentials(token)
         return CompletableFuture.completedFuture(null)
     }
 

@@ -105,3 +105,17 @@ https://github.com/wechaty/grpc/blob/218ef0dc8956f7c7a5113298a9658f26dee14468/ex
     at WechatifiedMessage.say (/bot/node_modules/_wechaty@0.63.9@wechaty/dist/src/user/message.js:446:47)
     at sendMsg (/bot/command-utils.js:151:21)
     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+
+io.grpc.StatusRuntimeException: UNAUTHENTICATED: Invalid Wechaty TOKEN "localhost:8788"
+
+if (authorization.startsWith('Wechaty ')) {
+
+}
+const client = new puppet.PuppetClient(
+    'localhost:8788',
+    creds,
+    {
+      'grpc.default_authority': 'puppet_token',
+    },
+  )
+
