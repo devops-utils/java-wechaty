@@ -1,33 +1,25 @@
-package io.github.wechaty.grpc;
+package io.github.wechaty.grpc
 
-import io.grpc.CallCredentials;
-import io.grpc.Metadata;
-import io.grpc.Status;
+import io.grpc.CallCredentials
+import io.grpc.Metadata
+import io.grpc.Status
+import java.lang.Runnable
+import java.util.concurrent.Executor
 
-import java.util.concurrent.Executor;
-
-public class BearerToken extends CallCredentials {
-    private String value;
-
-    public BearerToken(String value) {
-        this.value = value;
-    }
-
-    @Override
-    public void applyRequestMetadata(RequestInfo requestInfo, Executor executor, MetadataApplier metadataApplier) {
-        executor.execute(() -> {
+class BearerToken(private val value: String) : CallCredentials() {
+    override fun applyRequestMetadata(requestInfo: RequestInfo, executor: Executor, metadataApplier: MetadataApplier) {
+        executor.execute {
             try {
-                Metadata headers = new Metadata();
-                headers.put(Constants.AUTHORIZATION_METADATA_KEY, String.format("%s %s", Constants.BEARER_TYPE, value));
-                metadataApplier.apply(headers);
-            } catch (Throwable e) {
-                metadataApplier.fail(Status.UNAUTHENTICATED.withCause(e));
+                val headers = Metadata()
+                headers.put(Constants.AUTHORIZATION_METADATA_KEY, String.format("%s %s", Constants.BEARER_TYPE, value))
+                metadataApplier.apply(headers)
+            } catch (e: Throwable) {
+                metadataApplier.fail(Status.UNAUTHENTICATED.withCause(e))
             }
-        });
+        }
     }
 
-    @Override
-    public void thisUsesUnstableApi() {
+    override fun thisUsesUnstableApi() {
         // noop
     }
 }

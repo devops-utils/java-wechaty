@@ -1,15 +1,17 @@
-package io.github.wechaty.grpc;
+package io.github.wechaty.grpc
 
-import io.grpc.Context;
-import io.grpc.Metadata;
+import io.grpc.Context
+import io.grpc.Metadata
+import java.lang.AssertionError
 
-public class Constants {
-    public static final String BEARER_TYPE = "Wechaty";
+class Constants private constructor() {
+    companion object {
+        const val BEARER_TYPE = "Wechaty"
+        val AUTHORIZATION_METADATA_KEY = Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER)
+        val CLIENT_ID_CONTEXT_KEY = Context.key<String>("clientId")
+    }
 
-    public static final Metadata.Key<String> AUTHORIZATION_METADATA_KEY = Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER);
-    public static final Context.Key<String> CLIENT_ID_CONTEXT_KEY = Context.key("clientId");
-
-    private Constants() {
-        throw new AssertionError();
+    init {
+        throw AssertionError()
     }
 }
