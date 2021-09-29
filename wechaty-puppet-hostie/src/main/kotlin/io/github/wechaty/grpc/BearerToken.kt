@@ -6,7 +6,7 @@ import io.grpc.Status
 import java.lang.Runnable
 import java.util.concurrent.Executor
 
-class BearerToken(private val value: String) : CallCredentials() {
+class BearerToken(private val value: String?) : CallCredentials() {
     override fun applyRequestMetadata(requestInfo: RequestInfo, executor: Executor, metadataApplier: MetadataApplier) {
         executor.execute {
             try {
