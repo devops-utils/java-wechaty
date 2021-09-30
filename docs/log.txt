@@ -119,3 +119,29 @@ const client = new puppet.PuppetClient(
     },
   )
 
+10:49:04 ERR Config unhandledRejection: Error: Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.
+    at CDPSession.send (/wechaty/node_modules/puppeteer/src/common/Connection.ts:251:9)
+    at next (/wechaty/node_modules/puppeteer-extra-plugin-stealth/evasions/sourceurl/index.js:32:41)
+    at CDPSession.send (/wechaty/node_modules/puppeteer-extra-plugin-stealth/evasions/sourceurl/index.js:65:16)
+    at ExecutionContext._evaluateInternal (/wechaty/node_modules/puppeteer/src/common/ExecutionContext.ts:252:44)
+    at ExecutionContext.evaluate (/wechaty/node_modules/puppeteer/src/common/ExecutionContext.ts:138:23)
+    at DOMWorld.evaluate (/wechaty/node_modules/puppeteer/src/common/DOMWorld.ts:163:20) [object Promise]
+10:49:04 ERR Config ###########################
+10:49:04 ERR Config process.on(unhandledRejection) promise.catch(Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.)
+Config Error: Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.
+    at CDPSession.send (/wechaty/node_modules/puppeteer/src/common/Connection.ts:251:9)
+    at next (/wechaty/node_modules/puppeteer-extra-plugin-stealth/evasions/sourceurl/index.js:32:41)
+    at CDPSession.send (/wechaty/node_modules/puppeteer-extra-plugin-stealth/evasions/sourceurl/index.js:65:16)
+    at ExecutionContext._evaluateInternal (/wechaty/node_modules/puppeteer/src/common/ExecutionContext.ts:252:44)
+    at ExecutionContext.evaluate (/wechaty/node_modules/puppeteer/src/common/ExecutionContext.ts:138:23)
+    at DOMWorld.evaluate (/wechaty/node_modules/puppeteer/src/common/DOMWorld.ts:163:20)
+
+
+Config Error: connect ETIMEDOUT 104.21.48.253:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '104.21.48.253',
+  port: 443
+}
